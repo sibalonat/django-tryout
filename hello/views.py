@@ -5,3 +5,9 @@ from django.shortcuts import render
 
 def index(request) :
     return HttpResponse('Hello, world')
+
+def marin(request) :
+    return HttpResponse('Hello, world')
+
+def fry(request, name) :
+    return HttpResponse(f'Hello, {name}')
