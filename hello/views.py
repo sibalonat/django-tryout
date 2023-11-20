@@ -10,4 +10,5 @@ def marin(request) :
     return HttpResponse('Hello, world')
 
 def fry(request, name) :
-    return HttpResponse(f'Hello, {name.capitalize()}')
+    return render(request, 'hello/fry.html')
+    # return HttpResponse(f'Hello, {name.capitalize()}')
