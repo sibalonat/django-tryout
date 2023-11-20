@@ -4,10 +4,10 @@ from django.shortcuts import render
 # Create your views here.
 
 def index(request) :
-    return HttpResponse('Hello, world')
+    return render(request, 'hello/index.html')
 
 def marin(request) :
     return HttpResponse('Hello, world')
 
 def fry(request, name) :
-    return HttpResponse(f'Hello, {name}')
+    return HttpResponse(f'Hello, {name.capitalize()}')
