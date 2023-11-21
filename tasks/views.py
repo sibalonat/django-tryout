@@ -8,14 +8,14 @@ from django.urls import reverse
 # tasks = []
 
 class NewTaskForm(forms.Form) :
-    if 'tasks' not in request.session:
-        request.session['tasks'] = []
     task = forms.CharField(label='New Task')
     # priority = forms.IntegerField(label='Priority', min_value=1, max_value=10)
 
 def index(request) :
+    if 'tasks' not in request.session:
+        request.session['tasks'] = []
     return render(request, 'tasks/index.html', {
-        'tasks': tasks
+        'tasks': request.session['tasks']
     })
 def add(request) :
     if request.method == 'POST' :
