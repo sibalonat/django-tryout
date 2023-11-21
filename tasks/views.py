@@ -4,9 +4,12 @@ from django.http import HttpResponseRedirect
 from django.urls import reverse 
 # Create your views here.
 
-tasks = ['foo', 'bar', 'baz']
+# 'foo', 'bar', 'baz'
+# tasks = []
 
 class NewTaskForm(forms.Form) :
+    if 'tasks' not in request.session:
+        request.session['tasks'] = []
     task = forms.CharField(label='New Task')
     # priority = forms.IntegerField(label='Priority', min_value=1, max_value=10)
 
