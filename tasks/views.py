@@ -1,5 +1,7 @@
 from django.shortcuts import render
 from django import forms 
+from django.http import HttpResponseRedirect 
+from django.urls import reverse 
 # Create your views here.
 
 tasks = ['foo', 'bar', 'baz']
